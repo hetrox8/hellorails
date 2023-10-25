@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: LATIN1
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: hello_rails_development
+  username: suleiman
+  password: mombasa@2023
+  host: localhost
+  # You can specify the port here if it's different from the default (5432)
+
+test:
+  <<: *default
+  database: myapp_test
+  username: suleiman
+  password: mombasa@2023
+  host: localhost
+  # You can specify the port here if it's different from the default (5432)
+
+production:
+  <<: *default
+  database: hello_rails_production
+  username: suleiman
+  password: mombasa@2023
+  host: localhost
+  # You can specify the port here if it's different from the default (5432)
